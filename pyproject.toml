@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecoledirecte-dav"
+version = "0.1.0"
+description = "Passerelle WebDAV locale (lecture seule) vers les espaces de travail EcoleDirecte, pour Finder."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "wsgidav>=4.3",
+    "cheroot>=10",
+    "requests>=2.31",
+    "keyring>=25",
+    "tomli-w>=1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+ecoledirecte-dav = "ecoledirecte_dav.cli:main"
+
+[tool.setuptools]
+packages = ["ecoledirecte_dav"]
